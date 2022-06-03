@@ -1,0 +1,55 @@
+@model e_shopping.Models.Categories
+<div class="container-fluid">
+<div class="main-panel">
+    <div class="content-wrapper">
+<div class="row">
+<div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Add Item</h4> 
+                    <p asp-for="FullName" class="card-description"></p>
+                    <input asp-for="OrderID" hidden>
+                    <form method="post" class="forms-sample">
+                      <div class="form-group">
+                        <label asp-for="FullName"></label>
+                        <input asp-for="FullName" type="text" class="form-control"
+                         placeholder="Add Item here...">
+                         </div>
+                         <span asp-validation-for="FullName" class="text-danger"></span>
+                      <div class="form-group">
+                        <label asp-for="ProductCost"></label>
+                        <input asp-for="ProductCost" type="text" class="form-control"
+                        placeholder="Add Item here...">
+                        </div>
+                        <span asp-validation-for="ProductCost" class="text-danger"></span>
+                      <div class="form-group">
+                        <label asp-for="PaymentMode"></label>
+                        <input asp-for="PaymentMode" type="text" class="form-control"
+                        placeholder="Add Item here...">
+                      </div>
+                      <span asp-validation-for="PaymentMode" class="text-danger"></span>
+                      <div class="form-group">
+                        <label asp-for="StartDate"></label>
+                        <input asp-for="StartDate" type="text" class="form-control"
+                        placeholder="Add Item here...">
+                      </div>
+                      <span asp-validation-for="StartDate" class="text-danger"></span>
+                      <div class="form-group">
+                        <label asp-for="PaymentStatus"></label>
+                        <input asp-for="PaymentStatus" type="text" class="form-control"
+                        placeholder="Add Item here...">
+                      </div>
+                      <span asp-validation-for="PaymentStatus" class="text-danger"></span>
+                      <br>
+                      <input type="submit" class="btn btn-primary" value="Update">
+                      <a asp-action="ctrg" class="btn btn-dark">
+                        Back
+                      </a>
+                    </form>
+                </div> 
+              </div>
+              </div>
+           </div>
+        </div>
+        </div>
+        

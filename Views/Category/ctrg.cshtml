@@ -1,0 +1,86 @@
+
+@model IEnumerable<e_shopping.Models.Categories>
+<div class="pt-3">
+@if (Model.Count() >0)
+{
+   
+   <div class="container-fluid">
+<div class="main-panel">
+<div class="content-wrapper">
+    <div class="row">
+        <div class="col-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                         <a asp-controller="Category" asp-action="AddNew"
+                         class="btn btn-primary float-end">
+                            Add new item
+                         </a>
+                    <h4 class="card-title">Order Status</h4>
+                    <div class="table-responsive">
+    <table class="table .table-hover">
+        <thead>
+        <tr>
+            <th>
+               <div class="form-check form-check-muted m-0">
+                <label class="form-check-label">
+                   <input type="checkbox" class="form-check-input">
+                      </label>
+                    </div>
+                  </th>
+            <th>FullName</th>
+            <th>Payment Method</th>
+            <th>Payment Status</th>
+            <th>Product Cost</th>
+            <th>Start Date</th>
+            <th>Edit/Delete/Detail</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="form-check form-check-muted m-0">
+                <label class="form-check-label">
+                   <input type="checkbox" class="form-check-input">
+                      </label>
+                    </div>
+                    </td>
+                    <td>@item.FullName</td>
+                    <td>@item.PaymentMode</td>
+                    <td>@item.PaymentStatus</td>
+                    <td>@item.ProductCost</td>
+                    <td>@item.StartDate</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a asp-controller="Category" asp-action="edit" asp-route-Id="@item.OrderID" 
+                            class="btn text-primary"><i class="mdi mdi-eraser-variant"></i></a>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <a asp-controller="Category" asp-action="del" asp-route-Id="@item.OrderID" 
+                            class="btn text-danger"><i class="mdi mdi-pencil"></i></a>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <a asp-controller="Category" asp-action="detail" asp-route-Id="@item.OrderID" 
+                            class="btn text-info"><i class="mdi mdi-information-outline"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+       </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+   </div>
+}
+else
+{
+    <h5>data does not exist</h5>
+}
+        
+    </div>

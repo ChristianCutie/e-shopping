@@ -1,0 +1,30 @@
+@model e_shopping.Models.Type
+
+<div class="container-fluid">
+<div class="main-panel">
+    <div class="content-wrapper">
+<div class="row">
+<div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Edit Item</h4> 
+                    <p asp-for="Types" class="card-description"></p>
+                    <input asp-for="Types" hidden>
+                    <form method="post" class="forms-sample">
+                      <div class="form-group">
+                        <label asp-for="Types"></label>
+                        <input asp-for="Types" type="text" class="form-control"
+                         placeholder="Add Item here...">
+                         </div>
+                         <span asp-validation-for="Types" class="text-danger"></span>
+                      <br>
+                      <input type="submit" class="btn btn-primary" value="Update">
+                      <a asp-action="Types" class="btn btn-dark">
+                        Back
+                      </a>
+                    </form>
+                </div> 
+              </div>
+              </div>
+           </div>
+        </div>
